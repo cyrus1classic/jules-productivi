@@ -5,10 +5,12 @@
     <input matInput [(ngModel)]="data.title" />
   </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Description</mat-label>
-    <textarea matInput [(ngModel)]="data.description"></textarea>
-  </mat-form-field>
+  @if (data.type !== 'Map') {
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="data.description"></textarea>
+    </mat-form-field>
+  }
 
   <mat-form-field>
     <mat-label>Type</mat-label>
