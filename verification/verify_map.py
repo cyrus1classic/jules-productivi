@@ -19,6 +19,7 @@ def run(playwright):
     column.get_by_role("button", name="Add Ticket").click()
 
     page.get_by_label("Title").fill("My Location")
+    page.get_by_label("Description").fill("This is my favorite spot.")
     page.get_by_role("combobox", name="Type").click()
     page.get_by_role("option", name="Map").click()
 
@@ -34,16 +35,19 @@ def run(playwright):
 
     page.wait_for_timeout(1000)
 
-    # Verify ticket exists and has map thumbnail
+    # Verify ticket exists and has map thumbnail and description
     ticket = column.locator("app-ticket").filter(has_text="My Location")
     assert ticket.count() == 1
 
     # Check for map thumbnail
-    # Since ID is dynamic (map-{{id}}), we look for class map-thumbnail
     assert ticket.locator(".map-thumbnail").count() == 1
 
+    # Check for description
+    description = ticket.get_by_text("This is my favorite spot.")
+    assert description.count() == 1
+
     # Take screenshot
-    page.screenshot(path="verification/map_ticket.png")
+    page.screenshot(path="verification/map_ticket_with_desc.png")
 
     browser.close()
 

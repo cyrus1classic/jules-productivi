@@ -9,9 +9,8 @@
   <mat-card-content>
     @if (ticket.type === 'Map') {
       <div [id]="'map-' + ticket.id" class="map-thumbnail"></div>
-    } @else {
-      <p>{{ ticket.description }}</p>
     }
+    <p>{{ ticket.description }}</p>
   </mat-card-content>
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="editTicket()">Edit</button>
