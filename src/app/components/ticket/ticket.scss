@@ -13,3 +13,10 @@ mat-card {
   top: 0.5rem;
   right: 0.5rem;
 }
+
+.map-thumbnail {
+  height: 150px;
+  width: 100%;
+  pointer-events: none; /* Disable all interactions on thumbnail */
+  z-index: 1;
+}

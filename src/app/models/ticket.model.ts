@@ -1,4 +1,4 @@
-export type TicketType = 'User Story' | 'Bug' | 'Change' | 'Gap' | 'Technical';
+export type TicketType = 'User Story' | 'Bug' | 'Change' | 'Gap' | 'Technical' | 'Map';
 
 export interface Ticket {
   id: string;
@@ -6,4 +6,9 @@ export interface Ticket {
   description: string;
   type: TicketType;
   color: string;
+  mapData?: {
+    center: { lat: number; lng: number };
+    zoom: number;
+    pin?: { lat: number; lng: number };
+  };
 }
