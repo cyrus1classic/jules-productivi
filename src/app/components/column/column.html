@@ -1,0 +1,25 @@
+<div class="column-header" [style.background-color]="column.color">
+  <h3>{{ column.title }}</h3>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="editColumn()">Edit Column</button>
+    <button mat-menu-item (click)="deleteColumn()">Delete Column</button>
+  </mat-menu>
+</div>
+
+<div
+  cdkDropList
+  [cdkDropListData]="column.tickets"
+  class="ticket-list"
+  (cdkDropListDropped)="drop($event)"
+>
+  @for (ticket of column.tickets; track ticket.id) {
+    <app-ticket [ticket]="ticket" [columnId]="column.id" cdkDrag></app-ticket>
+  }
+</div>
+
+<button mat-button class="add-ticket-btn" (click)="addTicket()">
+  <mat-icon>add</mat-icon> Add Ticket
+</button>

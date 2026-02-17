@@ -1,0 +1,20 @@
+<mat-card [style.background-color]="ticket.color">
+  <mat-card-header>
+    <mat-card-title>{{ ticket.title }}</mat-card-title>
+    <mat-card-subtitle>{{ ticket.type }}</mat-card-subtitle>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    @if (ticket.type === 'Map') {
+      <div [id]="'map-' + ticket.id" class="map-thumbnail"></div>
+    } @else {
+      <p>{{ ticket.description }}</p>
+    }
+  </mat-card-content>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="editTicket()">Edit</button>
+    <button mat-menu-item (click)="deleteTicket()">Delete</button>
+  </mat-menu>
+</mat-card>
