@@ -1,0 +1,12 @@
+<div class="board-header">
+  <h2>jules-productivi</h2>
+  <button mat-raised-button color="primary" (click)="addColumn()">
+    <mat-icon>add</mat-icon> Add Column
+  </button>
+</div>
+
+<div class="board-container" cdkDropListGroup>
+  @for (column of columns(); track column.id) {
+    <app-column [column]="column"></app-column>
+  }
+</div>

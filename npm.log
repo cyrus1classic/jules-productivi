@@ -1,0 +1,25 @@
+
+> jules-productivi@0.0.0 start
+> ng serve
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size
+styles.css          | styles        | 111.49 kB |
+main.js             | main          |  49.75 kB |
+
+                    | Initial total | 161.24 kB
+
+Application bundle generation complete. [3.092 seconds] - 2026-02-17T02:42:54.564Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+
+No output file changes.
+
+Application bundle generation complete. [0.011 seconds] - 2026-02-17T02:45:01.860Z
+
+Page reload sent to client(s).

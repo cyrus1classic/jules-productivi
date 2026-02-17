@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  cursor: grab;
+}
+
+mat-card {
+  padding: 0.5rem;
+  position: relative;
+}
+
+.menu-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
