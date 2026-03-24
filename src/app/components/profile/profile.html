@@ -1,0 +1,22 @@
+<div class="profile-container" *ngIf="profile">
+  <h2>User Profile</h2>
+  <div>
+    <strong>Display Name:</strong> {{ profile.displayName }}
+  </div>
+  <div>
+    <strong>Given Name:</strong> {{ profile.givenName }}
+  </div>
+  <div>
+    <strong>Surname:</strong> {{ profile.surname }}
+  </div>
+  <div>
+    <strong>Email:</strong> {{ profile.userPrincipalName }}
+  </div>
+  <div>
+    <strong>ID:</strong> {{ profile.id }}
+  </div>
+</div>
+
+<div *ngIf="!profile">
+  <p>Loading profile...</p>
+</div>
