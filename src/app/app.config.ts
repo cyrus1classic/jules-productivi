@@ -14,8 +14,8 @@ export function loggerCallback(logLevel: LogLevel, message: string) {
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
-      clientId: 'Enter_the_Application_Id_Here',
-      authority: 'https://login.microsoftonline.com/Enter_the_Tenant_Info_Here',
+      clientId: 'b241ea34-8777-4bcd-a0a3-5c4db11ca472',
+      authority: 'https://cleverbadger.ciamlogin.com/84df9202-2b78-4338-ac46-269f76e8a5dc',
       redirectUri: '/',
       postLogoutRedirectUri: '/'
     },
